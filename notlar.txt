@@ -1,0 +1,4 @@
+Paket listelerini güncellemek için:
+
+pacman -Qqen > ~/myconfig/packages/pkglist-native.txt
+pacman -Qqem > ~/myconfig/packages/pkglist-aur.txt

@@ -1,0 +1,148 @@
+# SwayFX Config
+
+set $mod Mod4
+set $term foot
+set $menu rofi -show drun
+output * bg ~/.config/wallpaper.jpg fill
+
+# Klavye düzeni: TR / EN toggle (Alt+Shift ile geçiş)
+input * {
+    xkb_layout "tr,us"
+    xkb_variant ","
+    xkb_options "grp:alt_shift_toggle"
+}
+
+# Gaps
+gaps inner 10
+gaps outer 5
+
+# Kenarlık yok
+default_border none
+default_floating_border none
+
+# SwayFX blur ve efektler
+blur enable
+blur_radius 5
+blur_passes 2
+corner_radius 10
+
+
+# SwayFX opacity
+# Tüm pencereler şeffaf
+for_window [app_id=".*"] opacity 0.85
+for_window [class=".*"] opacity 0.85
+
+
+default_dim_inactive 0.25
+
+# Portal için environment değişkenlerini systemd'ye aktar
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
+# Autostart
+exec mako
+exec waybar
+
+# Panox clipboard manager
+# Daemon arka planda clipboard'ı dinler, Super+V ile panel açılır
+exec panox --daemon
+bindsym $mod+Shift+v exec panox
+
+# Thunderbird normal başlar
+exec thunderbird
+
+# Kapak kapatıldığında swaylock çalıştır
+bindswitch --reload --locked lid:on exec swaylock -f
+
+
+# Temel tuşlar
+bindsym $mod+Return exec $term
+# bindsym $mod+d exec $menu
+bindsym $mod+d exec ~/.config/rofi/launchers/misc/launcher.sh
+bindsym $mod+l exec ~/.config/rofi/applets/menu/powermenu.sh
+bindsym $mod+Escape exec swaylock -f
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+e exec swaymsg exit
+# cevap vermeyen uygulamayı zorla kapatma
+bindsym $mod+Shift+x exec swaymsg -t get_tree | jq '.. | select(.focused?) | .pid' | xargs kill -9                         
+
+# Focus - ok tuşları
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Pencere taşıma
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Layout
+bindsym $mod+h splith
+bindsym $mod+v splitv
+bindsym $mod+f fullscreen
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+# Workspaces
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# Resize mode
+mode "resize" {
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Ses
+bindsym XF86AudioRaiseVolume exec pamixer -i 5
+bindsym XF86AudioLowerVolume exec pamixer -d 5
+bindsym XF86AudioMute exec pamixer -t
+
+# Parlaklık
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+
+# Screenshot
+bindsym Print exec grim ~/Screenshots/$(date +%Y%m%d_%H%M%S).png
+bindsym $mod+Print exec grim -g "$(slurp)" ~/Screenshots/$(date +%Y%m%d_%H%M%S).png
+
+
+
+# touchpad 
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
+    dwt enabled
+    middle_emulation enabled
+    click_method clickfinger
+}
+

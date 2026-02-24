@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Remmina Küçük Uygulama
+Comment=Uzak masaüstüne küçük uygulama menüsü ile bağlan
+Icon=org.remmina.Remmina
+Exec=remmina -i
+Terminal=false
+Type=Application
+Hidden=false

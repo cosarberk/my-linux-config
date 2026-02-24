@@ -1,0 +1,33 @@
+[Default Applications]
+x-scheme-handler/mailto=userapp-Thunderbird-P2BSI3.desktop
+message/rfc822=userapp-Thunderbird-P2BSI3.desktop
+x-scheme-handler/mid=userapp-Thunderbird-P2BSI3.desktop
+x-scheme-handler/news=userapp-Thunderbird-KNCUI3.desktop
+x-scheme-handler/snews=userapp-Thunderbird-KNCUI3.desktop
+x-scheme-handler/nntp=userapp-Thunderbird-KNCUI3.desktop
+x-scheme-handler/feed=userapp-Thunderbird-SU3PI3.desktop
+application/rss+xml=userapp-Thunderbird-SU3PI3.desktop
+application/x-extension-rss=userapp-Thunderbird-SU3PI3.desktop
+x-scheme-handler/webcal=userapp-Thunderbird-ZOEQI3.desktop
+text/calendar=userapp-Thunderbird-ZOEQI3.desktop
+application/x-extension-ics=userapp-Thunderbird-ZOEQI3.desktop
+x-scheme-handler/webcals=userapp-Thunderbird-ZOEQI3.desktop
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+
+[Added Associations]
+x-scheme-handler/mailto=userapp-Thunderbird-P2BSI3.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-P2BSI3.desktop;
+x-scheme-handler/news=userapp-Thunderbird-KNCUI3.desktop;
+x-scheme-handler/snews=userapp-Thunderbird-KNCUI3.desktop;
+x-scheme-handler/nntp=userapp-Thunderbird-KNCUI3.desktop;
+x-scheme-handler/feed=userapp-Thunderbird-SU3PI3.desktop;
+application/rss+xml=userapp-Thunderbird-SU3PI3.desktop;
+application/x-extension-rss=userapp-Thunderbird-SU3PI3.desktop;
+x-scheme-handler/webcal=userapp-Thunderbird-ZOEQI3.desktop;
+x-scheme-handler/webcals=userapp-Thunderbird-ZOEQI3.desktop;
+application/pdf=google-chrome.desktop;
+text/markdown=com.google.Chrome.desktop;

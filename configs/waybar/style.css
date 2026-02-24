@@ -1,0 +1,141 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font", "Font Awesome 7 Free", sans-serif;
+    font-size: 14px;
+    border: none;
+}
+
+window#waybar {
+    background: rgba(30, 30, 46, 0.7);
+    color: #cdd6f4;
+    border-radius: 15px;
+}
+
+#workspaces {
+    margin-left: 10px;
+}
+
+#workspaces button {
+    padding: 5px 12px;
+    color: #cdd6f4;
+    background: transparent;
+    border-radius: 10px;
+    margin: 3px;
+}
+
+#workspaces button.focused {
+    background: rgba(137, 180, 250, 0.3);
+    color: #89b4fa;
+}
+
+#workspaces button:hover {
+    background: rgba(137, 180, 250, 0.2);
+}
+
+#language,
+#custom-vpn,
+#custom-screenshot,
+#custom-led,
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#backlight,
+#bluetooth {
+    padding: 5px 15px;
+    margin: 3px 5px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+#clock {
+    color: #cba6f7;
+}
+
+#language {
+    color: #94e2d5;
+}
+
+#custom-screenshot {
+    color: #f5c2e7;
+}
+
+#custom-screenshot:hover {
+    background: rgba(245, 194, 231, 0.3);
+}
+
+#custom-led {
+    color: #fab387;
+}
+
+#custom-led:hover {
+    background: rgba(250, 179, 135, 0.3);
+}
+
+#custom-vpn {
+    color: #f38ba8;
+}
+
+#custom-vpn.connected {
+    color: #a6e3a1;
+}
+
+#custom-vpn:hover {
+    background: rgba(166, 227, 161, 0.3);
+}
+
+#backlight {
+    color: #f9e2af;
+}
+
+#pulseaudio {
+    color: #a6e3a1;
+}
+
+#pulseaudio.muted {
+    color: #dc3545;
+}
+
+#bluetooth {
+    color: #89b4fa;
+}
+
+#bluetooth.connected {
+    color: #74c7ec;
+}
+
+#bluetooth.disabled,
+#bluetooth.off {
+    color: #6c7086;
+}
+
+#network {
+    color: #89dceb;
+}
+
+#network.disconnected {
+    color: #dc3545;
+}
+
+#network.ethernet {
+    color: #a6e3a1;
+}
+
+#battery {
+    color: #a6e3a1;
+}
+
+#battery.charging {
+    color: #94e2d5;
+}
+
+#battery.plugged {
+    color: #a6e3a1;
+}
+
+#battery.warning:not(.charging) {
+    color: #f9e2af;
+}
+
+#battery.critical:not(.charging) {
+    color: #dc3545;
+}
